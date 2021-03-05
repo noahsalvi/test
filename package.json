@@ -14,7 +14,8 @@
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^1.0.0",
-    "serverless-http": "^2.7.0"
+    "serverless-http": "^2.7.0",
+    "encoding": "0.1.13"
   },
   "devDependencies": {
     "sapper": "^0.28.0",
