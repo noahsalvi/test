@@ -22,7 +22,7 @@ async function run() {
   await exec(`cp -a ${staticPath} ${buildPath}/build/`);
 
   await exec(
-    `cd ..; ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'`
+    `cd ..; find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"`
   );
 
   fixServerImportsInRenderFunction();
