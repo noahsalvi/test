@@ -15,13 +15,16 @@ async function run() {
 
   await exec(`npm run build`);
 
-  await exec(`cp -R "${buildPath}" "${functionsBuildPath}"`);
-  console.log(`cp -R "${buildPath}" "${functionsBuildPath}"`);
+  await exec(`cp -R ${buildPath} ${functionsBuildPath}`);
 
   const staticPath = path.join(__dirname, "/../static/.");
   const builBuildPath = path.join(buildPath, "/build/");
 
-  const { stderr: tets } = await exec(`cp -a ${staticPath} ${builBuildPath}`);
+  const { stderr: tets } = await exec(
+    `cp -a "${staticPath}" "${builBuildPath}"`
+  );
+  console.log(`cp -a "${staticPath}" "${builBuildPath}"`);
+
   console.log(tets);
 
   const { stdout } = await exec(`cd ${builBuildPath} && ls`);
