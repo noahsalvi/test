@@ -21,7 +21,7 @@ async function run() {
 
   await exec(`cp -a ${staticPath} ${buildPath}/build/`);
 
-  const { stdout } = await exec(`ls; cd ..; ls`);
+  const { stdout } = await exec(`cd staticPath; ls`);
   console.log(stdout);
 
   fixServerImportsInRenderFunction();
