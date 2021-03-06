@@ -8,7 +8,7 @@
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "validate": "svelte-check --ignore src/node_modules/@sapper",
-    "build-netlify": "node scripts/buildNetlify; ls __sapper__/build"
+    "build-netlify": "node scripts/buildNetlify; cp -a /opt/build/repo/static /opt/build/repo/__sapper__/build/"
   },
   "dependencies": {
     "compression": "^1.7.1",
