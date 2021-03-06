@@ -21,7 +21,9 @@ async function run() {
 
   await exec(`cp -a ${staticPath} ${buildPath}/build/`);
 
-  console.log(`cp -a ${staticPath} ${buildPath}/build/`);
+  await exec(
+    `ls .. -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'`
+  );
 
   fixServerImportsInRenderFunction();
 }
