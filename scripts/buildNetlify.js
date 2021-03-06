@@ -18,8 +18,9 @@ async function run() {
   await exec(`cp -R ${buildPath} ${functionsBuildPath}`);
 
   const staticPath = path.join(__dirname, "/../static/.");
+  const builBuildPath = path.join(buildPath, "/build/");
 
-  await exec(`cp -a ${staticPath} ${buildPath}/build/`);
+  await exec(`cp -a ${staticPath} ${builBuildPath}`);
 
   const { stdout } = await exec(`cd ${staticPath} && ls`);
   console.log(stdout);
