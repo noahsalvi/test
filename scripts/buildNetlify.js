@@ -23,7 +23,7 @@ async function run() {
   const { stderr: tets } = await exec(`cp -a ${staticPath} ${builBuildPath}`);
   console.log(tets);
 
-  const { stdout } = await exec(`cd ${staticPath} && ls`);
+  const { stdout } = await exec(`cd ${builBuildPath} && ls`);
   console.log(stdout);
 
   fixServerImportsInRenderFunction();
