@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build",
+    "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "validate": "svelte-check --ignore src/node_modules/@sapper",
-    "build-netlify": "node scripts/buildNetlify"
+    "build-netlify": "node scripts/buildNetlify; ls __sapper__/build"
   },
   "dependencies": {
     "compression": "^1.7.1",
