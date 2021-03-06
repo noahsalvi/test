@@ -21,9 +21,7 @@ async function run() {
 
   await exec(`cp -a ${staticPath} ${buildPath}/build/`);
 
-  await exec(
-    `cd ..; find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"`
-  );
+  await exec(`ls; cd ..; ls`);
 
   fixServerImportsInRenderFunction();
 }
