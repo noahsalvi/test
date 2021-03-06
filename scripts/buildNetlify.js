@@ -15,7 +15,7 @@ async function run() {
 
   await exec(`npm run build`);
 
-  await exec(`cp -R ${buildPath} ${functionsBuildPath}`);
+  await exec(`cp -R "${buildPath}" "${functionsBuildPath}"`);
 
   const staticPath = path.join(__dirname, "/../static/.");
   const builBuildPath = path.join(buildPath, "/build/");
