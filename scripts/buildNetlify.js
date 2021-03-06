@@ -19,7 +19,9 @@ async function run() {
 
   const staticPath = path.join(__dirname, "/../static/.");
 
-  await exec(`cp -a ${staticPath} ${buildPath}/build`);
+  await exec(`cp -a ${staticPath} ${buildPath}/build/`);
+
+  console.log(`cp -a ${staticPath} ${buildPath}/build/`);
 
   fixServerImportsInRenderFunction();
 }
